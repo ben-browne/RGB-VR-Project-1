@@ -22,7 +22,7 @@ public class ShackleHammer : MonoBehaviour
 
     public void OnTriggerEnter(Collider LockCollider)
     {
-        if(speed > 1)
+        if(speed > 0.1f)
         {
         ShackleClosed.SetActive(false);
         ShackleOpen.SetActive(true);

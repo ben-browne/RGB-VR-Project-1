@@ -11,8 +11,12 @@ public class ShackleOpenKey : MonoBehaviour
 
     public void OnTriggerEnter(Collider KeyCollider)
     {
+        if(KeyCollider.gameObject.tag == "Key")
+        {
         ShackleClosed.SetActive(false);
         ShackleOpen.SetActive(true);
+        }
+
     }
 
 }
