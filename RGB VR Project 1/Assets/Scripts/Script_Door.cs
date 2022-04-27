@@ -2,11 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_ClimbingHand : MonoBehaviour
+public class Script_Door : MonoBehaviour
 {
-
-    public GameObject grabbedLedge;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,23 +16,30 @@ public class Script_ClimbingHand : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ledge")
+        if (other.gameObject.name == "XR Origin")
         {
-            grabbedLedge = other.gameObject;
-            print("in range of ledge");
+            print("in range of door");
             GameObject.Find("Interact Manager").GetComponent<Script_Interact>().ObjectToInteractWith = gameObject;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Ledge")
+        if (other.gameObject.name == "XR Origin")
         {
-            grabbedLedge = null;
             print("out of range of door");
             GameObject.Find("Interact Manager").GetComponent<Script_Interact>().ObjectToInteractWith = null;
         }
     }
+
+
+    public void testFunction()
+    {
+        print("--- TRIGGER SUCCESSFUL ---");
+        GameObject.Find("XR Origin").transform.position = new Vector3(-75.8f, -10.3f, 314.8f);
+    }
+
 }

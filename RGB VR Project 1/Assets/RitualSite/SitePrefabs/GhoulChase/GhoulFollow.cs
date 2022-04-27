@@ -15,7 +15,7 @@ public class GhoulFollow : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.FindWithTag("Player").transform; //target the player
+        //target = GameObject.FindWithTag("Player").transform; //target the player
         myTransform = transform; //cache transform data for easy access/preformance
     }
 
@@ -38,7 +38,7 @@ public class GhoulFollow : MonoBehaviour
             Quaternion.LookRotation(target.position - myTransform.position), rotationSpeed * Time.deltaTime);
             myTransform.position += myTransform.forward * moveSpeed * Time.deltaTime;
             Vector3 tmpPos = transform.position;
-            tmpPos.y = -0.1f;
+            //tmpPos.y = 0;
             transform.position = tmpPos;
         }
         else if (distance <= stop)

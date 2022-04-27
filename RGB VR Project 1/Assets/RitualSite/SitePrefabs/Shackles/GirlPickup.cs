@@ -10,26 +10,13 @@ public class GirlPickup : MonoBehaviour
     public Collider pickupbox;
     public bool Inbox = true;
 
-    public void OnTriggerEnter(Collider other)
-    {
-        Inbox = !Inbox;
-    }
 
-    public void OnTriggerExit(Collider other)
+    public void PickupGirl()
     {
-        Inbox = !Inbox;
-    }
 
-    public void Update()
-    {
-        if(Inbox == true)
-        {
-            if (Input.GetKey(KeyCode.E)) // change  input
-            {
                 Tablegirl.SetActive(false);
                 Shouldergirl.SetActive(true);
                 Ghoul.SetActive(true);
-            }
-        }
+ 
     }
 }
