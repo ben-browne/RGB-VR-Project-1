@@ -9,6 +9,7 @@ public class GirlPickup : MonoBehaviour
     public GameObject Ghoul;
     public Collider pickupbox;
     public bool Inbox = true;
+    public GameObject EndZone;
 
 
     public void PickupGirl()
@@ -17,6 +18,7 @@ public class GirlPickup : MonoBehaviour
                 Tablegirl.SetActive(false);
                 Shouldergirl.SetActive(true);
                 Ghoul.SetActive(true);
+        EndZone.SetActive(true);
  
     }
 }
